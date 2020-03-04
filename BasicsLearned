@@ -1,0 +1,32 @@
+namespace PalindromeTemplate
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // I would get someone to enter a word
+            // I would Reverse that word
+            // Compare the word to itself in reverse to determine if its a Palindrome
+
+            string UserEnterWord = string.Empty;// represents an empty string (declare a variable)
+            Console.WriteLine("Enter a word please: ");
+            UserEnterWord = Console.ReadLine();
+
+            char[] temp = UserEnterWord.ToCharArray();//places the characters into an array
+            Array.Reverse(temp);//reverses the array
+            string WordReversed = new string(temp);
+
+            if (UserEnterWord.ToLower().Equals(WordReversed.ToLower())) // if(UserEnterWord.Equals(WordReversed)) - is the line of code that didn't consider caps
+            {
+                Console.WriteLine("This is a Palindrome.");
+            }
+            else
+            {
+                Console.WriteLine("C'mon, you know this is NOT a Palindrome!");
+
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
